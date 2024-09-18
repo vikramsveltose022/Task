@@ -1,6 +1,9 @@
 import mongoose from "mongoose";
 
-const UserSchema = new mongoose.Schema({
+const BlogSchema = new mongoose.Schema({
+    userId: {
+        type: String
+    },
     image: {
         type: String,
         required: true
@@ -11,9 +14,9 @@ const UserSchema = new mongoose.Schema({
     title: {
         type: String
     },
-    desc: {
+    content: {
         type: String
     }
 }, { timestamps: true })
 
-export const User = new mongoose.model("blog", UserSchema)
+export const Blog = new mongoose.model("blog", BlogSchema)
